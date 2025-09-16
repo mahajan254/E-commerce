@@ -47,17 +47,23 @@ window.addEventListener('scroll',()=>{
 
 //swiper
 var swiper = new Swiper(".new-arrival", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  slidesPerView: 4,       // ✅ show 4 products on desktop
+  spaceBetween: 20,
+  loop: true,              // ✅ infinite loop
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },   // mobile
+    576: { slidesPerView: 2 }, // small tablets
+    768: { slidesPerView: 3 }, // tablets
+    1024: { slidesPerView: 4 } // desktops
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
   
